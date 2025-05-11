@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRef } from 'react';
 
 const AdminPage = () => {
-  const backendBaseURL = 'http://localhost:8080';
+  const backendBaseURL = 'https://quick-mobile.onrender.com';
+  // const backendBaseURL = 'http://localhost:8080';
 
   const [tab, setTab] = useState('services');
   const [services, setServices] = useState([]);
