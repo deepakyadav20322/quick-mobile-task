@@ -8,7 +8,7 @@ const MainComponents = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/service");
+        const res = await axios.get("https://quick-mobile.onrender.com/api/service");
         setServices(res?.data.data);
       } catch (err) {
         console.error("Failed to fetch services:", err);
@@ -17,7 +17,7 @@ const MainComponents = () => {
 
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/product");
+        const res = await axios.get("https://quick-mobile.onrender.com/api/product");
         setProducts(res?.data?.products);
       } catch (err) {
         console.error("Failed to fetch products:", err);
