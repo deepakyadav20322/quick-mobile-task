@@ -10,7 +10,11 @@ const userRouter=require('./routers/userRouter');
 dotenv.config();
 connectDB();
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: 'https://quick-mobile-client.vercel.app',  
+  credentials: true,
+}));
 
 app.get('/',(req,res)=>res.json({mes:"all thing working"}))
 app.use('/api/service',servicesRouter);
