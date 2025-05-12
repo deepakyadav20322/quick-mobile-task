@@ -10,7 +10,7 @@ const userRouter=require('./routers/userRouter');
 dotenv.config();
 connectDB();
 app.use(express.json());
-const cors = require('cors');
+
 
 const allowedOrigins = [
   'https://quick-mobile-client.vercel.app',
