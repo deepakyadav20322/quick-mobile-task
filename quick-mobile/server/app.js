@@ -10,12 +10,23 @@ const userRouter=require('./routers/userRouter');
 dotenv.config();
 connectDB();
 app.use(express.json());
-// app.use(cors());
+const cors = require('cors');
+
+const allowedOrigins = [
+  'https://quick-mobile-client.vercel.app',
+  'https://quick-mobile-task.vercel.app'  
+];
+
 app.use(cors({
-  origin: '*',  
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
-
 app.get('/',(req,res)=>res.json({mes:"all thing working"}))
 app.use('/api/service',servicesRouter);
 app.use('/api/product',productRouter);
