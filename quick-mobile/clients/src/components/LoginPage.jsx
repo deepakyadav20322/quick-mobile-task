@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault();
     console.log(auth);
     try {
-      const authResp=await axios.post("http://localhost:8080/api/auth",{email:auth.email,password:auth.password});
+      const authResp=await axios.post("https://quick-mobile.onrender.com/api/auth",{email:auth.email,password:auth.password});
       console.log(authResp.data);
       if(authResp.data.success){
         toast.success("Welcome to dashboard");
@@ -51,7 +51,7 @@ const Login = () => {
             />
           </div>
 
-          {/* Password Field */}
+        
           <div>
             <label className="block text-gray-600 font-medium mb-1">Password</label>
             <input
